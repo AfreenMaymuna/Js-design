@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+     .botton-menu{
+         background-color: rgb(245, 224, 224);
+         color: white;
+         width: 200px;
+         height: 100vh;
+         position: absolute;
+         left: -200px;
+         transition: all 1m ease-in-out;
+     }
+     .show{
+    left:0;
+}
+     .btn{
+    border: 0;
+    background-color:rgb(248, 193, 202);
+    padding: 12px 60px;
+    cursor: pointer;
+    border-radius: 15px;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: rgb(203, 222, 238);
+  color: white;
+}
+.botton-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 26px;
+  margin-left: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <button class="btn">Click Me</button>
+    <div class="botton-menu">
+         <h1>This a menu</h1>
+         <ul>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#home">Time</a></li>
+            <li><a href="#news">Routine</a></li>
+            <li><a href="#contact">News-Time</a></li>
+            <li><a href="#about">Occation</a></li>
+          </ul>
+    </div>
+    <script>
+                document.addEventListener('DOMContentLoaded', function (){
+                    const btn = document.querySelector('.btn')
+
+        function changeButtonStatus(){
+            const botton_menu = document.querySelector('.botton-menu')
+          
+            botton_menu.classList.toggle('show')
+
+            console.log(botton_menu.classList.contains('show'))
+
+                    function closeNav() {
+        document.querySelector(".botton-menu").style.width = "0";
+        }
+        }  
+        btn.addEventListener('click', changeButtonStatus)
+                })
+        
+    </script>
+</body>
+</html>
